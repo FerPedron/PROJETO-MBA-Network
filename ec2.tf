@@ -1,10 +1,18 @@
 
+data "aws_vpc" "projeto_vpc" {
+  filter {
+    name   = "tag:Name"
+    values = ["PROJETO-MBA-VPC"]
+  }
+}
+
+
 module "apache_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
   name        = "apache-sg"
   description = "Security group para o servidor do Apache"
-  vpc_id      = data.aws_vpc.PROJETO-MBA-VPC.id
+  vpc_id      = data.aws_vpc.projeto_vpc.id
 
   ingress_cidr_blocks = ["0.0.0.0/0"]
   ingress_rules       = ["http-80-tcp", "ssh-tcp"]
