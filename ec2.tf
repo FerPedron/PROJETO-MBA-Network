@@ -48,7 +48,7 @@ resource "aws_instance" "instancia_II" {
   vpc_security_group_ids = [module.apache_sg.security_group_id]
   subnet_id              = "subnet-0cf8fc8cb765d8e6e"
   iam_instance_profile   = "LabInstanceProfile"
-  user_data              = file("./dependencias_ec2.sh")
+  user_data              = file("./dependencias_ec2-II.sh")
 
   tags = {
     Name = "Instancia-II"
