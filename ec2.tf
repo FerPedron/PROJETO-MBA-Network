@@ -22,14 +22,14 @@ module "apache_sg" {
 
 
 resource "aws_instance" "instancia_I" {
-  ami                  = "ami-0b0dcb5067f052a63"
-  instance_type        = "t2.micro"
-  key_name             = "vockey"
+  ami                    = "ami-0b0dcb5067f052a63"
+  instance_type          = "t2.micro"
+  key_name               = "vockey"
   monitoring             = true
   vpc_security_group_ids = [module.apache_sg.security_group_id]
-  subnet_id            = "subnet-0a6185b9c5eaa2fca"
-  iam_instance_profile = "LabInstanceProfile"
-  user_data            = file("./dependencias_ec2.sh")
+  subnet_id              = "subnet-0a6185b9c5eaa2fca"
+  iam_instance_profile   = "LabInstanceProfile"
+  user_data              = file("./dependencias_ec2.sh")
 
 
   tags = {
@@ -41,10 +41,14 @@ resource "aws_instance" "instancia_I" {
 
 
 resource "aws_instance" "instancia_II" {
-  ami           = "ami-0b0dcb5067f052a63"
-  instance_type = "t2.micro"
-  key_name      = "vockey"
-  subnet_id     = "subnet-0cf8fc8cb765d8e6e"
+  ami                    = "ami-0b0dcb5067f052a63"
+  instance_type          = "t2.micro"
+  key_name               = "vockey"
+  monitoring             = true
+  vpc_security_group_ids = [module.apache_sg.security_group_id]
+  subnet_id              = "subnet-0cf8fc8cb765d8e6e"
+  iam_instance_profile   = "LabInstanceProfile"
+  user_data              = file("./dependencias_ec2.sh")
 
   tags = {
     Name = "Instancia-II"
