@@ -19,3 +19,10 @@ module "vpc" {
     Name = "PROJETO-MBA-VPC"
   }
 }
+
+
+
+
+
+ 
+
