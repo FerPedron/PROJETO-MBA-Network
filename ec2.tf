@@ -27,7 +27,7 @@ resource "aws_instance" "instancia_I" {
   key_name               = "vockey"
   monitoring             = true
   vpc_security_group_ids = [module.apache_sg.security_group_id]
-  subnet_id              = "subnet-0a6185b9c5eaa2fca"
+  subnet_id              = "subnet-091a66a63c7a1b2ae"
   iam_instance_profile   = "LabInstanceProfile"
   user_data              = file("./dependencias_ec2.sh")
 
@@ -46,7 +46,7 @@ resource "aws_instance" "instancia_II" {
   key_name               = "vockey"
   monitoring             = true
   vpc_security_group_ids = [module.apache_sg.security_group_id]
-  subnet_id              = "subnet-0cf8fc8cb765d8e6e"
+  subnet_id              = "subnet-09986c5811e9be7bd"
   iam_instance_profile   = "LabInstanceProfile"
   user_data              = file("./dependencias_ec2-II.sh")
 
